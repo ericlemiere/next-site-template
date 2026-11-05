@@ -227,7 +227,7 @@ export const AudioPlayer = ({ data }) => {
           <div className="mb-4">
             <div className="relative h-2 bg-gray-200 rounded-lg overflow-hidden">
               <div
-                className="absolute top-0 left-0 h-full bg-primary-20 rounded-lg transition-all duration-300"
+                className="absolute top-0 left-0 h-full bg-primary/20 rounded-lg transition-all duration-300"
                 style={{ width: `${bufferedPercentage}%` }}
               />
               <div

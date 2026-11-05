@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "colors": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-colors.mjs",
+    "predev": "npm run colors",
+    "prebuild": "npm run colors",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
