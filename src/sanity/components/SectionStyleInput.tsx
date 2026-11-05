@@ -294,23 +294,42 @@ const SelectField = ({
         </Tooltip>
       )}
     </Box>
-    <select
-      style={{
-        width: 180,
-        fontSize: "1.1rem",
-        padding: "0.3rem 0.3rem",
-        borderRadius: 4,
-        border: `1px solid rgba(150, 150, 150, 0.5)`,
-      }}
-      value={value}
-      onChange={(e) => onChange((e.target as HTMLSelectElement).value)}
-    >
-      {options.map((opt) => (
-        <option key={opt.value} value={opt.value}>
-          {opt.title}
-        </option>
-      ))}
-    </select>
+    <Box style={{ position: "relative", width: 180 }}>
+      <select
+        style={{
+          width: "100%",
+          fontSize: "1.1rem",
+          padding: "0.3rem 1.8rem 0.3rem 0.3rem",
+          borderRadius: 4,
+          border: `1px solid rgba(150, 150, 150, 0.5)`,
+          appearance: "none",
+          WebkitAppearance: "none",
+          MozAppearance: "none",
+        }}
+        value={value}
+        onChange={(e) => onChange((e.target as HTMLSelectElement).value)}
+      >
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.title}
+          </option>
+        ))}
+      </select>
+      <Box
+        style={{
+          position: "absolute",
+          right: 10,
+          top: "50%",
+          transform: "translateY(-50%)",
+          pointerEvents: "none",
+          color: "#AAA",
+          fontSize: 12,
+          lineHeight: 1,
+        }}
+      >
+        ▼
+      </Box>
+    </Box>
   </Flex>
 );
 

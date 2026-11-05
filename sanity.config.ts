@@ -26,12 +26,12 @@ import { teamTasksPlugin } from "./src/sanity/plugins/teamTasks";
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
 import { schemaTypes } from "./src/sanity/schemaTypes";
 import { structure } from "./src/sanity/structure";
-import { locations } from "@/sanity/presentation/locations";
 
 import { COLORS } from "@/utils/constants/colors";
 import { sandbox, getValidTypeFilters } from "@/sanity/lib/configFunctions";
 
 import CustomField from "./src/sanity/components/CustomSanity/CustomField";
+import { pagePreviewButton } from "./src/sanity/components/CustomSanity/PagePreviewButton";
 //import CustomStringInput from "./src/sanity/components/CustomSanity/CustomStringInput";
 
 export default defineConfig({
@@ -47,7 +47,6 @@ export default defineConfig({
     structureTool({ structure }),
     presentationTool({
       title: "Site Preview",
-      resolve: { locations },
       previewUrl: {
         initial: isDev
           ? "http://localhost:3000"
@@ -91,6 +90,7 @@ export default defineConfig({
     ...(isDev ? [visionTool({ defaultApiVersion: apiVersion })] : []),
 
     customDocumentActions(),
+    pagePreviewButton(), // one-click "Page Preview" button in the document header
     codeInput(),
     unsplashImageAsset(),
     simplerColorInput({
