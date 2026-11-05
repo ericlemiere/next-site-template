@@ -1,6 +1,7 @@
 import { useTheme, Stack, Text, Card } from "@sanity/ui";
 import { SANITY_COLORS } from "@/utils/constants/colors";
 import styles from "./CustomField.module.css";
+import BooleanSegmentedField from "./BooleanSegmentedField";
 
 export default function CustomField(props) {
   // const theme = useTheme();
@@ -39,14 +40,18 @@ export default function CustomField(props) {
     <Card>
       <Stack gap={3}>
         <div
-          className={`${styles.fieldWrapper} ${isObjectNestedField ? styles.imageField : ""} ${isHiddenTitle ? styles.noBorder : ""} ${isBooleanField ? styles.booleanField : ""}`}
+          className={`${styles.fieldWrapper} ${isObjectNestedField ? styles.imageField : ""} ${isHiddenTitle ? styles.noBorder : ""}`}
           style={{
             "--border-color": borderColor,
             position: "relative",
             transition: "all 0.2s ease",
           }}
         >
-          {props.renderDefault({ ...props, validation: [] })}
+          {isBooleanField ? (
+            <BooleanSegmentedField {...props} />
+          ) : (
+            props.renderDefault({ ...props, validation: [] })
+          )}
         </div>
 
         {hasError && (

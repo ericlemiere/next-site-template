@@ -103,7 +103,7 @@ const eventSchema = {
       name: "allDay",
       type: "boolean",
       title: "All Day Event",
-      description: "Check this box if the event lasts all day.",
+      description: "Is this an all day event?",
       group: "details",
       initialValue: false,
     },
@@ -166,7 +166,7 @@ const eventSchema = {
 
       return {
         title: title || "No title",
-        media: media || heroImage || BsFillCalendarEventFill,
+        media: media || BsFillCalendarEventFill,
         subtitle: subtitle,
       };
     },

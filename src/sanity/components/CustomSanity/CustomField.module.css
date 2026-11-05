@@ -50,20 +50,41 @@
   color: rgb(190, 105, 0);
 }
 
-/* Boolean field specific styling */
-.booleanField :global([data-ui="Card"]) {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+/*
+ * Boolean header (BooleanSegmentedField). Matches the other field labels, but uses
+ * width: 100% capped at 900px: unlike Sanity's own field headers, nothing here
+ * shrinks a fixed 900px label down to the form column, so it would overflow.
+ */
+.booleanHeader {
+  max-width: 900px;
 }
 
-.booleanField :global(label[data-ui="Text"][for]) {
-  border-bottom: 3px solid var(--label-border) !important;
-  padding: 0px 0px 8px !important;
-  font-weight: 700 !important;
-  font-size: 1.2rem !important;
-  display: inline-block !important;
-  width: 900px !important;
+.booleanTitle {
+  width: 100%;
+  border-bottom: 3px solid var(--label-border);
+  padding: 0 0 12px;
+}
+
+.booleanDescription {
+  padding-top: 10px;
+}
+
+/* Segmented Yes / No control for boolean fields (BooleanSegmentedField) */
+.segmented {
+  display: inline-flex;
+  width: fit-content;
+}
+
+.segmentedButton {
+  min-width: 110px;
+  border-radius: 0 !important;
+}
+
+.segmentedButton:first-child {
+  border-radius: 4px 0 0 4px !important;
+}
+
+.segmentedButton:last-child {
+  border-radius: 0 4px 4px 0 !important;
+  margin-left: -1px;
 }
