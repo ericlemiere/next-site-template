@@ -1,0 +1,1 @@
+export { SanityButton } from './SanityButton'

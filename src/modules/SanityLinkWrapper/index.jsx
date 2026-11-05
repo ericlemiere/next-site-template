@@ -1,0 +1,1 @@
+export {SanityLinkWrapper} from './SanityLinkWrapper'

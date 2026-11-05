@@ -1,0 +1,18 @@
+/* Color tokens */
+/* These MUST be updated to match the colors in the utils/constants/colors.js file */
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-primary: #03ccff;
+  --color-primary-20: #03ccff33;
+  --color-primary-dark: #460071;
+  --color-primary-light: #09fbff;
+  --color-secondary: #d403e1;
+  --color-blue: #3689d7;
+  --color-darker-blue: #266097;
+  --color-gray: #c6c6c6;
+  --color-lightgray: #f5f5f5;
+  --color-darkgray: #777777;
+  --color-error: #ff0059;
+  --color-accent: #d403e1;
+}

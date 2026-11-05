@@ -1,0 +1,97 @@
+/* Typography tokens and utilities */
+@theme {
+  --font-family-primary: "Roboto", sans-serif;
+  --font-family-secondary: "Saira", sans-serif;
+  --font-family-fuzzy: "Fuzzy Bubbles", cursive;
+}
+
+/* ============================================= Typography Utilities */
+/* HEADINGS */
+@utility text-heading1 {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(40px, calc(60 / 1440 * 100vw), calc(60 / 1440 * 1526px));
+  line-height: clamp(50px, calc(70 / 1440 * 100vw), calc(70 / 1440 * 1526px));
+  font-weight: 700;
+}
+
+@utility text-heading2 {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(40px, calc(48 / 1440 * 100vw), calc(48 / 1440 * 1526px));
+  line-height: clamp(44px, calc(54 / 1440 * 100vw), calc(54 / 1440 * 1526px));
+  font-weight: 600;
+}
+
+@utility text-heading3 {
+  font-family: var(--font-family-primary);
+  font-size: clamp(28px, calc(36 / 1440 * 100vw), calc(36 / 1440 * 1526px));
+  line-height: clamp(32px, calc(40 / 1440 * 100vw), calc(40 / 1440 * 1526px));
+  font-weight: 500;
+}
+
+@utility text-heading4 {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(24px, calc(24 / 1440 * 100vw), calc(24 / 1440 * 1526px));
+  line-height: clamp(28px, calc(28 / 1440 * 100vw), calc(28 / 1440 * 1526px));
+  font-weight: 500;
+}
+
+@utility text-heading5 {
+  font-family: var(--font-family-fuzzy);
+  font-size: clamp(20px, calc(20 / 1440 * 100vw), calc(20 / 1440 * 1526px));
+  line-height: clamp(24px, calc(24 / 1440 * 100vw), calc(24 / 1440 * 1526px));
+  font-weight: 500;
+}
+
+/* BODY TEXT */
+@utility text-body1 {
+  font-family: var(--font-family-primary);
+  font-size: clamp(16px, calc(16 / 1440 * 100vw), calc(16 / 1440 * 1526px));
+  line-height: clamp(24px, calc(24 / 1440 * 100vw), calc(24 / 1440 * 1526px));
+  font-weight: 500;
+}
+
+@utility text-body2 {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(16px, calc(16 / 1440 * 100vw), calc(16 / 1440 * 1526px));
+  line-height: clamp(24px, calc(24 / 1440 * 100vw), calc(24 / 1440 * 1526px));
+}
+
+@utility text-body3 {
+  font-family: var(--font-family-primary);
+  font-size: clamp(12px, calc(12 / 1440 * 100vw), calc(12 / 1440 * 1526px));
+  line-height: clamp(22px, calc(22 / 1440 * 100vw), calc(22 / 1440 * 1526px));
+}
+
+/* TAG */
+@utility text-tag {
+  font-family: var(--font-family-primary);
+  font-size: clamp(14px, calc(14 / 1440 * 100vw), calc(14 / 1440 * 1526px));
+}
+
+/* BUTTON */
+@utility text-button {
+  font-family: var(--font-family-primary);
+  font-size: clamp(16px, calc(20 / 1440 * 100vw), calc(20 / 1440 * 1526px));
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* FOOTER */
+@utility text-footer1 {
+  font-family: var(--font-family-primary);
+  font-size: clamp(14px, calc(21 / 1440 * 100vw), calc(21 / 1440 * 1526px));
+  font-weight: 600;
+}
+
+@utility text-footer2 {
+  font-family: var(--font-family-primary);
+  font-size: clamp(14px, calc(21 / 1440 * 100vw), calc(21 / 1440 * 1526px));
+  font-weight: 600;
+}
+
+/* FORM LABEL */
+@utility text-formLabel {
+  font-family: var(--font-family-primary);
+  font-size: clamp(18px, calc(22 / 1440 * 100vw), calc(22 / 1440 * 1526px));
+  font-weight: 600;
+}

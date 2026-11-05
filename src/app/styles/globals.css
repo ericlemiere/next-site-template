@@ -1,0 +1,32 @@
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* Import theme tokens */
+@import "./animations.css";
+@import "./border-radius.css";
+@import "./colors.css";
+@import "./spacing.css";
+@import "./typography.css";
+@import "./calendar.css";
+@import "./embla.css";
+
+/* Import base styles */
+@import "./base.css";
+
+/* Prevent header and footer from participating in view transitions */
+header {
+  view-transition-name: none !important;
+}
+
+footer {
+  view-transition-name: none !important;
+}
+
+/* View transitions only apply to named elements (page) */
+::view-transition-old(page) {
+  animation: 0.4s cubic-bezier(0.65, 0, 0.35, 1) both move-out;
+}
+::view-transition-new(page) {
+  animation: 0.4s cubic-bezier(0.65, 0, 0.35, 1) both move-in;
+  animation-delay: 100ms;
+}

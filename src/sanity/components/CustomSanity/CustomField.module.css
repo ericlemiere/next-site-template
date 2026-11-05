@@ -1,0 +1,69 @@
+/* Wrapper uses CSS custom property for dynamic border color */
+.fieldWrapper {
+  --label-border: var(--border-color);
+}
+
+/* Target regular input field labels (strings, numbers, etc.) */
+.fieldWrapper :global(label[data-ui="Text"][for]) {
+  border-bottom: 3px solid var(--label-border) !important;
+  padding: 0px 0px 8px !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  display: inline-block !important;
+  width: 900px !important;
+}
+
+/* Override for image-related fields - 1px dotted border */
+.imageField :global(label[data-ui="Text"][for]) {
+  border-bottom: 1px solid var(--label-border) !important;
+}
+
+/* Target ALL legend elements (objects, arrays, fieldsets) */
+.fieldWrapper :global(legend) {
+  border-bottom: 3px solid var(--label-border) !important;
+  padding: 0px 0px 8px !important;
+  display: inline-block !important;
+  width: 900px !important;
+}
+
+/* Override for image-related fields - 1px dotted border */
+.imageField :global(legend) {
+  border-bottom: 1px solid var(--label-border) !important;
+}
+
+/* Remove border when title is a single space */
+.noBorder :global(label[data-ui="Text"][for]),
+.noBorder :global(legend) {
+  border-bottom: none !important;
+}
+
+/* Target the span inside legend */
+.fieldWrapper :global(legend span) {
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+}
+
+/* Field header container */
+.fieldWrapper :global(div[data-ui="fieldHeaderContentBox"]) {
+  max-width: 900px !important;
+  margin-bottom: 12px !important;
+  color: rgb(190, 105, 0);
+}
+
+/* Boolean field specific styling */
+.booleanField :global([data-ui="Card"]) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.booleanField :global(label[data-ui="Text"][for]) {
+  border-bottom: 3px solid var(--label-border) !important;
+  padding: 0px 0px 8px !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  display: inline-block !important;
+  width: 900px !important;
+}

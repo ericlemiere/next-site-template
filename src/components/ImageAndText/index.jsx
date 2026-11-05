@@ -1,0 +1,1 @@
+export { ImageAndText } from './ImageAndText'

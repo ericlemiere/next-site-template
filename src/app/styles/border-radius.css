@@ -1,0 +1,15 @@
+@theme {
+  /* Border Radius */
+  --radius-button: clamp(
+    48px,
+    calc(48 / 1440 * 100vw),
+    calc(48 / 1440 * 1526px)
+  );
+  --radius-form: clamp(7px, calc(7 / 1440 * 100vw), calc(7 / 1440 * 1526px));
+  --radius-card: clamp(10px, calc(20 / 1440 * 100vw), calc(20 / 1440 * 1526px));
+  --radius-image: clamp(
+    10px,
+    calc(20 / 1440 * 100vw),
+    calc(20 / 1440 * 1526px)
+  );
+}

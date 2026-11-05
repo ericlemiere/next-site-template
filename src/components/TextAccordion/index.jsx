@@ -1,0 +1,1 @@
+export { TextAccordion } from './TextAccordion'

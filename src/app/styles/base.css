@@ -1,0 +1,20 @@
+/* Base HTML element styles */
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: numeric;
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
