@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Text } from "@/modules/Text";
-import { Svg } from "@/modules/Svg";
+import { SiteLogo } from "@/modules/SiteLogo";
 import { ScrollAnimation } from "@/modules/ScrollAnimation";
 import { SocialIcons } from "@/modules/SocialIcons";
 import { SanityLinkWrapper } from "@/modules/SanityLinkWrapper";
@@ -8,6 +8,7 @@ import { SanityLinkWrapper } from "@/modules/SanityLinkWrapper";
 import { COLOR } from "@/utils/constants/colors";
 
 export const Footer = ({ data = {} }) => {
+  const logo = data?.logo || null;
   const pageLayout = data?.pageLayout || [];
   const phoneNumber = data?.phoneNumber;
   const socialIcons = data?.socialIcons;
@@ -58,12 +59,12 @@ export const Footer = ({ data = {} }) => {
   // ==================================================================== RENDER
   return (
     <footer className="footer flex relative w-full py-clamp-60 lg:py-clamp-80 bg-primary">
-      <div className="footer-container flex flex-col md:flex-row w-[88%] justify-between mx-auto">
+      <div className="footer-container flex flex-col md:flex-row w-[92%] justify-between mx-auto">
         <ScrollAnimation type="fade-right">
           <div className="flex hover:scale-105 transition-transform duration-300 ease-in-out">
             <Link href="/" aria-label="Home Button Link">
               <div className="flex w-clamp-160 lg:w-clamp-288 h-clamp-80 lg:h-clamp-144 relative">
-                <Svg name="logo-horizontal" />
+                <SiteLogo logo={logo} maxHeightPx={144} />
               </div>
             </Link>
           </div>

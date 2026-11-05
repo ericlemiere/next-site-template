@@ -56,7 +56,7 @@ export const TeamMember = (data) => {
               className="team_svg_wrapper flex justify-center items-center w-clamp-22 h-clamp-18 ml-clamp-10
             group-hover:[&_path]:stroke-white [&_path]:transition-all [&_path]:duration-200"
             >
-              <Svg name="right-arrow" />
+              <Svg name="rightArrow" />
             </div>
           </div>
         </div>

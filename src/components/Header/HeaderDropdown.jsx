@@ -148,7 +148,7 @@ export const HeaderDropdown = ({
             className={`relative transform duration-300 ease-in-out ${sizeString} ${rotateString}`}
           >
             <Svg
-              name="dropdown-arrow"
+              name="dropdownArrow"
               className={`${isMobile ? "[&_path]:stroke-white" : "[&_path]:stroke-black group-hover:[&_path]:stroke-primary [&_path]:transition-colors duration-300"}`}
             />
           </div>

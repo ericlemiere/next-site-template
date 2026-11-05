@@ -1,5 +1,6 @@
 import { schemaGroup } from "../../../utils/constants/schema";
 import { DocumentIcon } from "@sanity/icons/Document";
+import { createLogoField } from "../../lib/createLogoField";
 
 export default {
   name: "header",
@@ -23,10 +24,11 @@ export default {
       to: { type: "headerBanner" },
       group: "content",
     },
+    createLogoField({ group: "content" }),
     {
       name: "pageLayout",
       type: "array",
-      title: "Link Layout",
+      title: "Navigation Layout",
       group: "content",
       of: [
         {

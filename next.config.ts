@@ -1,12 +1,36 @@
 import type { NextConfig } from "next";
 import { createClient } from "@sanity/client";
 
+const DEFAULT_SANITY_API_VERSION = "2025-10-07";
+
+function resolveSanityApiVersion(rawValue?: string): string {
+  const trimmed = rawValue?.trim();
+
+  if (!trimmed) return DEFAULT_SANITY_API_VERSION;
+
+  // Accept values copied with quotes or a leading "v" prefix.
+  const unwrapped = trimmed.replace(/^['\"]|['\"]$/g, "");
+  const normalized = unwrapped.replace(/^v/, "");
+
+  const isValid = normalized === "1" || /^\d{4}-\d{2}-\d{2}$/.test(normalized);
+  if (!isValid) {
+    console.warn(
+      `Invalid NEXT_PUBLIC_SANITY_API_VERSION \"${rawValue}\". Falling back to ${DEFAULT_SANITY_API_VERSION}.`,
+    );
+    return DEFAULT_SANITY_API_VERSION;
+  }
+
+  return normalized;
+}
+
 // Initialize Sanity client
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   useCdn: false,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+  apiVersion: resolveSanityApiVersion(
+    process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+  ),
 });
 
 const nextConfig: NextConfig = {

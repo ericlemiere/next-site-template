@@ -1,3 +1,5 @@
+import { createLogoField } from "../../lib/createLogoField";
+
 const footerSchema = {
   name: "footer",
   type: "document",
@@ -11,6 +13,7 @@ const footerSchema = {
       readOnly: true,
       hidden: true,
     },
+    createLogoField(),
     {
       name: "phoneNumber",
       type: "string",

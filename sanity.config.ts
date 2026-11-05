@@ -52,7 +52,7 @@ export default defineConfig({
         initial: isDev
           ? "http://localhost:3000"
           : process.env.SANITY_STUDIO_PREVIEW_URL ||
-            "https://riff-template-app.vercel.app", // TODO: update to your deployed frontend URL
+            "https://next-site-template-el.vercel.app", // TODO: update to your deployed frontend URL
         preview: "/",
         previewMode: {
           enable: "/api/draft-mode/enable",

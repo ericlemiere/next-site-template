@@ -1,16 +1,12 @@
 "use client";
-import { SVGS } from "./js/constants";
+import { SVGS } from "./svgs";
 import {
   svgPathFillToTailwind,
   svgPathStrokeToTailwind,
 } from "@/utils/constants/colors";
 
-// get data object connected to the "name" prop of the component
-// object: {RATIO (percentage of h:w), SVG (svg react component)}
-const getSvg = (name) => {
-  const key = name.replace(/-/g, "_").toUpperCase();
-  return SVGS[key];
-};
+// Look up the SVG render function for the "name" prop (must match a key in svgs/index.js exactly)
+const getSvg = (name) => SVGS[name];
 
 export const Svg = ({
   pathFill = "", // color key from colors.js (COLOR.WHITE, COLOR.PRIMARY, etc)
@@ -19,7 +15,7 @@ export const Svg = ({
   className = "",
   "aria-hidden": ariaHidden,
 }) => {
-  const SVG_DATA = getSvg(name);
+  const renderSvg = getSvg(name);
   const pathFillString = svgPathFillToTailwind[pathFill] || "";
   const pathStrokeString = svgPathStrokeToTailwind[pathStroke] || "";
 
@@ -38,7 +34,7 @@ export const Svg = ({
       aria-hidden={ariaHidden}
       aria-label={!ariaHidden ? name + " svg" : undefined}
     >
-      {SVG_DATA && <>{SVG_DATA.SVG}</>}
+      {renderSvg?.()}
     </div>
   );
 };

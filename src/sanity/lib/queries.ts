@@ -793,6 +793,10 @@ export const ERROR_PAGE_QUERY = defineQuery(`*[_type == "pageNotFound"][0]{
 export const HEADER_QUERY = defineQuery(`
   *[_type == 'header'][0] {
     ...,
+    logo{
+      alt,
+      ${imageAssetQuery}
+    },
     headerBanner->{
       links[]${linkQuery},
     },
@@ -829,6 +833,10 @@ export const HEADER_QUERY = defineQuery(`
 export const FOOTER_QUERY = defineQuery(`
   *[_type == 'footer'][0] {
     ...,
+    logo{
+      alt,
+      ${imageAssetQuery}
+    },
     socialIcons[]{
       ...,
     },

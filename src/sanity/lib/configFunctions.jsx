@@ -6,7 +6,7 @@ export const sandbox = () => {
   const URL = isDevelopment
     ? "http://localhost:3000"
     : process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://riff-template-app.vercel.app";
+      "https://next-site-template-el.vercel.app";
 
   return {
     title: "Sandbox",

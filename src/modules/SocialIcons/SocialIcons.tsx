@@ -23,11 +23,11 @@ const iconSvgNames = {
   Bluesky: "bluesky",
   Facebook: "facebook",
   Instagram: "instagram",
-  LinkedIn: "linkedIn",
+  LinkedIn: "linkedin",
   Pinterest: "pinterest",
   TikTok: "tiktok",
   Vimeo: "vimeo",
-  X: "X_ICON",
+  X: "X_Icon",
   YouTube: "youtube",
 };
 

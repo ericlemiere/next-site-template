@@ -18,7 +18,7 @@ export const LighthouseButton = () => {
 
     let pageUrl =
       process.env.SANITY_STUDIO_PREVIEW_URL ||
-      "https://riff-template-app.vercel.app"; // TODO: Replace with your actual live site URL;
+      "https://next-site-template-el.vercel.app"; // TODO: Replace with your actual live site URL;
 
     if (document._type !== "homePage" && document.slug?.current) {
       // For other pages with slugs

@@ -414706,7 +414706,7 @@ const Bmi = {
 var Wmi = {};
 const Gmi = () => {
     const n =
-      Wmi.NEXT_PUBLIC_SITE_URL || "https://riff-template-app.vercel.app";
+      Wmi.NEXT_PUBLIC_SITE_URL || "https://next-site-template-el.vercel.app";
     return {
       title: "Sandbox",
       name: "sandbox",
@@ -414829,7 +414829,7 @@ const Jmi = {
       title: "Site Preview",
       resolve: { locations: Umi },
       previewUrl: {
-        initial: "https://riff-template-app.vercel.app/",
+        initial: "https://next-site-template-el.vercel.app/",
         preview: "/",
         previewMode: {
           enable: "/api/draft-mode/enable",

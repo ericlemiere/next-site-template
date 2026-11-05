@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { HeaderBanner } from "./HeaderBanner";
 import { HeaderDropdown } from "./HeaderDropdown";
-import { Svg } from "@/modules/Svg";
+import { SiteLogo, getLogoRatio } from "@/modules/SiteLogo";
 import { Text } from "@/modules/Text";
 import { SanityLinkWrapper } from "@/modules/SanityLinkWrapper";
 import { SanityButton } from "@/modules/SanityButton";
@@ -31,6 +31,7 @@ export const Header = ({ data = {} }) => {
   const headerType = data?.headerType || 1;
   const headerBanner = data?.headerBanner || null;
   const button = data?.button || null;
+  const logo = data?.logo || null;
   const pathname = usePathname();
 
   // Refs
@@ -55,8 +56,14 @@ export const Header = ({ data = {} }) => {
   const isStickyDynamicHeader = headerType === 3;
 
   // Logo Constants
-  const logoWidth = 154; // TODO: set this from the logo
-  const logoHeight = 80; // TODO: set this from the logo
+  // The logo is sized to logoHeight, and its width follows the logo's aspect ratio,
+  // capped at logoMaxWidth (very wide logos shrink in height to fit instead).
+  const logoHeight = 80; // TODO: adjust if needed
+  const logoMaxWidth = 220; // TODO: adjust if needed
+  const logoWidth = Math.min(
+    logoMaxWidth,
+    Math.round(logoHeight * getLogoRatio(logo)),
+  );
 
   // Navbar Height Constants
   // TODO: make sure these are correct
@@ -181,7 +188,7 @@ export const Header = ({ data = {} }) => {
       lastMobileStateRef.current = shouldBeMobile;
       setIsMobile(shouldBeMobile);
     }
-  }, [navWidth, windowWidth, isMobile]);
+  }, [navWidth, windowWidth, isMobile, logoWidth]);
 
   // ========================================================================
   // Clear clicked link state when pathname changes
@@ -374,7 +381,7 @@ export const Header = ({ data = {} }) => {
                   height: clampSize(logoHeight),
                 }}
               >
-                <Svg name="logo-horizontal" />
+                <SiteLogo logo={logo} maxHeightPx={logoHeight} priority />
               </div>
             </Link>
           </ScrollAnimation>
